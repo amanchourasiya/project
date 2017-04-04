@@ -10,5 +10,48 @@ package org.f4.beans;
  * @author jarvis
  */
 public class TeacherBean {
+    private String name,address,moblileNo,email;
+    private String subjects[]=new String[5];
+
+    public void setSubjects(String[] subjects) {
+        this.subjects = subjects;
+    }
+
+    public String[] getSubjects() {
+        return subjects;
+    }
+    
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getMoblileNo() {
+        return moblileNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setMoblileNo(String moblileNo) {
+        this.moblileNo = moblileNo;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
 }
