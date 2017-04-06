@@ -12,7 +12,7 @@ package org.f4.datasource;
 public class SqlConstants {
     public static final String LOGIN_CHECK="";
     public static final String STUDENT_REGISTER="";
-    public static final String TEACHER_REGISTER="";
+    public static final String TEACHER_REGISTER="something";
     
     
 }
