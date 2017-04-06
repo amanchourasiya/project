@@ -10,7 +10,7 @@ package org.f4.beans;
  * @author jarvis
  */
 public class TeacherBean {
-    private String name,address,moblileNo,email;
+    private String name,address,moblileno,email;
     private String subjects[]=new String[5];
 
     public void setSubjects(String[] subjects) {
@@ -30,8 +30,8 @@ public class TeacherBean {
         return address;
     }
 
-    public String getMoblileNo() {
-        return moblileNo;
+    public String getMoblileno() {
+        return moblileno;
     }
 
     public String getEmail() {
@@ -46,8 +46,8 @@ public class TeacherBean {
         this.address = address;
     }
 
-    public void setMoblileNo(String moblileNo) {
-        this.moblileNo = moblileNo;
+    public void setMoblileno(String moblileno) {
+        this.moblileno = moblileno;
     }
 
     public void setEmail(String email) {
