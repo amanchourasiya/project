@@ -22,21 +22,29 @@ public class DAO {
     private final String url="jdbc:oracle:thin@localhost:1521/xe";
     private final String user="fantastic";
     private final String pwd="four";
-  public DAO() throws SQLException{
-    
+  public DAO() {
+    try{
 conn=DriverManager.getConnection(url,user,pwd);
+    }catch(SQLException e){
+    System.out.println("SQL Exception in DAO constructor");
+    }
 } 
-  public boolean loginCheck(String user,String pwd)throws SQLException{
-  
-      ps=conn.prepareStatement(SqlConstants.LOGIN_CHECK);
+  public boolean loginCheck(String user,String pwd){
+  boolean flag=false;
+      try{
+          ps=conn.prepareStatement(SqlConstants.LOGIN_CHECK);
       ps.setString(0, user);
       ps.setString(1,pwd);
       rs=ps.executeQuery();
-      boolean flag=false;
+      
       if(rs.next()){
       
           int count=rs.getInt(0);
           if(count==1)flag=true;
+      }
+      }catch(SQLException e){
+    
+          System.out.println("SQL ERR");return false;
       }
       return flag;
       

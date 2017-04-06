@@ -29,7 +29,7 @@ public class LoginFormAction extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest (HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException ,SQLException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String user,pwd;
         user=request.getParameter("userid");
@@ -58,7 +58,7 @@ public class LoginFormAction extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         processRequest(request, response);
     }
 
