@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +16,7 @@ public class StudentDAO {
     private final String url="jdbc:oracle:thin@localhost:1521/xe";
     private final String user="fantastic";
     private final String pwd="four";
-  public StudentDAO{
+  public StudentDAO() throws SQLException{
     
 conn=DriverManager.getConnection(url,user,pwd);
 }  
