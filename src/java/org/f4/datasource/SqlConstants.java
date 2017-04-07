@@ -10,7 +10,7 @@ package org.f4.datasource;
  * @author jarvis
  */
 public class SqlConstants {
-    public static final String LOGIN_CHECK="select count(*) from LoginDetails where userid=? and pwd=?";
+    public static final String LOGIN_CHECK="select count(*) from LOGIN where USERID=? and PASSWORD=?";
     public static final String STUDENT_REGISTER="";
     public static final String TEACHER_REGISTER="something";
     
