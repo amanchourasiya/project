@@ -72,15 +72,15 @@ conn=DriverManager.getConnection(url,user,pwd);
      return flag;
   }
    public boolean teacherRegister(TeacherBean sb )
-  {
+  {  boolean flag=false;
       try
-      {
+      { 
           ps=conn.prepareStatement(SqlConstants.TEACHER_REGISTER);
           ps.setString(0, sb.getName());
-         ps.setString(1,sb.getRoll());
-         ps.setString(3, sb.getAddress());
-         ps.setString(5, sb.getEmail());
-         ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+         ps.setString(5,sb.getSubject());
+         ps.setString(1, sb.getAddress());
+         ps.setString(4, sb.getEmail());
+         ps.setInt(3,Integer.parseInt(sb.getMobileno()));
          ps.execute();
          flag=true;
       }
