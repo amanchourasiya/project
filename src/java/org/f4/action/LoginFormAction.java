@@ -7,11 +7,12 @@ package org.f4.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.f4.datasource.*;
 /**
  *
  * @author jarvis
@@ -27,20 +28,22 @@ public class LoginFormAction extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginFormAction</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginFormAction at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String user,pwd;
+        user=request.getParameter("userid");
+        pwd=request.getParameter("password");
+        PrintWriter pw=response.getWriter(); 
+        
+        if(new DAO().loginCheck(user, pwd)){
+           
+            pw.println("<h1>login successfull "+user+"</h1>");
+           
+        }
+        else{
+        
+            pw.println("<h1>Login unsuccessful </h1>");
         }
     }
 
@@ -55,7 +58,7 @@ public class LoginFormAction extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         processRequest(request, response);
     }
 

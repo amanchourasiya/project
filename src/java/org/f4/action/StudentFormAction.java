@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.f4.beans.*;
 
 /**
  *
@@ -30,18 +31,16 @@ public class StudentFormAction extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet StudentFormAction</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet StudentFormAction at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        
+        StudentBean sbean=new StudentBean();
+        sbean.setName(request.getParameter("name"));
+        sbean.setAddress(request.getParameter("address"));
+        sbean.setDob(request.getParameter("dob"));
+        sbean.setEmail(request.getParameter("email"));
+        sbean.setMobileno(request.getParameter("mobileno"));
+        sbean.setRoll(request.getParameter("roll"));
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
