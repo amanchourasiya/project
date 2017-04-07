@@ -12,7 +12,7 @@ package org.f4.datasource;
 public class SqlConstants {
     public static final String LOGIN_CHECK="select count(*) from LoginDetails where userid=? and pwd=?";
     public static final String STUDENT_REGISTER="insert into NEWSTUDENTREG values (?,?,?,?,?,?)";
-    public static final String TEACHER_REGISTER="something";
+    public static final String TEACHER_REGISTER="insert into NEWTEACHERREG values (?,?,?,?,?,?)";
     
     
 }

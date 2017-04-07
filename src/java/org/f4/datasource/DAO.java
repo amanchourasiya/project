@@ -76,6 +76,13 @@ conn=DriverManager.getConnection(url,user,pwd);
       try
       {
           ps=conn.prepareStatement(SqlConstants.TEACHER_REGISTER);
+          ps.setString(0, sb.getName());
+         ps.setString(1,sb.getRoll());
+         ps.setString(3, sb.getAddress());
+         ps.setString(5, sb.getEmail());
+         ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+         ps.execute();
+         flag=true;
       }
       catch(SQLException e)
      {
