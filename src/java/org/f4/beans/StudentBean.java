@@ -59,5 +59,7 @@ public class StudentBean {
     public void setEmail(String email) {
         this.email = email;
     }
+
     
+   
 }

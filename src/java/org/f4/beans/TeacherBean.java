@@ -48,7 +48,7 @@ public class TeacherBean {
     }
 
     public void setMoblileno(String moblileno) {
-        this.moblileno = moblileno;
+        this.mobileno = moblileno;
     }
 
     public void setEmail(String email) {
