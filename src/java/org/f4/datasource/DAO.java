@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.f4.beans.StudentBean;
+import org.f4.beans.TeacherBean;
 
 /**
  *
@@ -48,5 +50,38 @@ conn=DriverManager.getConnection(url,user,pwd);
       }
       return flag;
       
+  }
+  public boolean studentRegister(StudentBean sb )
+  { boolean flag=false;
+     try
+     { 
+         ps=conn.prepareStatement(SqlConstants.STUDENT_REGISTER);
+         ps.setString(0, sb.getName());
+         ps.setString(1,sb.getRoll());
+         ps.setString(3, sb.getAddress());
+         ps.setString(5, sb.getEmail());
+         ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+         ps.execute();
+         flag=true;
+     }
+     catch(SQLException e)
+     {
+         System.out.println("handle Sql Exception");
+         return flag;
+     }
+     return flag;
+  }
+   public boolean teacherRegister(TeacherBean sb )
+  {
+      try
+      {
+          ps=conn.prepareStatement(SqlConstants.TEACHER_REGISTER);
+      }
+      catch(SQLException e)
+     {
+         System.out.println("handle Sql Exception");
+         return flag;
+     }
+     return flag; 
   }
 }
