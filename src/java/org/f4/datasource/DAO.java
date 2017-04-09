@@ -43,6 +43,10 @@ System.out.println("Connection creatted succesfully");
     
         System.out.println("Class not registered");
     }
+    catch(ClassNotFoundException e){
+    
+        System.out.println("Class not registered");
+    }
 } 
     
   public boolean loginCheck(String user,String pwd){ //Checks the login done by user returns true if successfull.
