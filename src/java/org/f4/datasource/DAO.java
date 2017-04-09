@@ -24,14 +24,16 @@ public class DAO {
     private final String url="jdbc:oracle:thin@localhost:1521/xe";
     private final String user="fantastic";
     private final String pwd="four";
-  public DAO() {
+  
+    public DAO() { //constructor initializes connection object and provides connection object
     try{
 conn=DriverManager.getConnection(url,user,pwd);
     }catch(SQLException e){
     System.out.println("SQL Exception in DAO constructor");
     }
 } 
-  public boolean loginCheck(String user,String pwd){
+    
+  public boolean loginCheck(String user,String pwd){ //Checks the login done by user returns true if successfull.
   boolean flag=false;
       try{
           ps=conn.prepareStatement(SqlConstants.LOGIN_CHECK);
@@ -51,7 +53,8 @@ conn=DriverManager.getConnection(url,user,pwd);
       return flag;
       
   }
-  public boolean studentRegister(StudentBean sb )
+  
+  public boolean studentRegister(StudentBean sb )// Function called when any new student registers on portal
   { boolean flag=false;
      try
      { 
@@ -71,7 +74,8 @@ conn=DriverManager.getConnection(url,user,pwd);
      }
      return flag;
   }
-   public boolean teacherRegister(TeacherBean sb )
+  
+   public boolean teacherRegister(TeacherBean sb )//Funstion called when new teacher registers on portal
   {  boolean flag=false;
       try
       { 
