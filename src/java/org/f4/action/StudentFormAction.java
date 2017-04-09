@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.f4.beans.*;
+import org.f4.datasource.DAO;
 
 /**
  *
@@ -31,7 +32,7 @@ public class StudentFormAction extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        PrintWriter pw=response.getWriter();
         StudentBean sbean=new StudentBean();
         sbean.setName(request.getParameter("name"));
         sbean.setAddress(request.getParameter("address"));
@@ -39,7 +40,14 @@ public class StudentFormAction extends HttpServlet {
         sbean.setEmail(request.getParameter("email"));
         sbean.setMobileno(request.getParameter("mobileno"));
         sbean.setRoll(request.getParameter("roll"));
-        
+        if(new DAO().studentRegister(sbean))
+        {
+           pw.println("<h1>Student registered successfully</h1>");
+        }
+        else
+        {
+            pw.println("<h1>Student not registered successfully</h1>");
+        }
         
     }
 
