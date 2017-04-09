@@ -30,6 +30,7 @@ public class LoginFormAction extends HttpServlet {
      */
     protected void processRequest (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("Login form class called");
         response.setContentType("text/html;charset=UTF-8");
         String user,pwd;
         user=request.getParameter("userid");
