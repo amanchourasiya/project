@@ -30,7 +30,7 @@ public class DAO {
     private final String driver="oracle.jdbc.driver.OracleDriver";
   public DAO() {
   
-    public DAO() { //constructor initializes connection object and provides connection object
+   
     try{
         Class.forName(driver);
         System.out.println("Class registered");
@@ -43,10 +43,7 @@ System.out.println("Connection creatted succesfully");
     
         System.out.println("Class not registered");
     }
-    catch(ClassNotFoundException e){
-    
-        System.out.println("Class not registered");
-    }
+   
 } 
     
   public boolean loginCheck(String user,String pwd){ //Checks the login done by user returns true if successfull.
