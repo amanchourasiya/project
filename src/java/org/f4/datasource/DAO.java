@@ -105,8 +105,9 @@ System.out.println("Connection creatted succesfully");
          ps.setString(6,sb.getSubject());
          ps.setString(2, sb.getAddress());
          ps.setString(5, sb.getEmail());
-         
-         ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+         ps.setDate(3,this.dateProcess(sb.get))
+         //ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+         ps.setLong(4, Integer.parseInt(sb.getMobileno()));
         
          ps.execute();
          flag=true;
