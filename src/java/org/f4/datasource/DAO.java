@@ -105,7 +105,7 @@ System.out.println("Connection creatted succesfully");
          ps.setString(6,sb.getSubject());
          ps.setString(2, sb.getAddress());
          ps.setString(5, sb.getEmail());
-         ps.setDate(3,this.dateProcess(sb.get))
+         ps.setDate(3,this.dateProcess(sb.getDob()));
          //ps.setInt(4,Integer.parseInt(sb.getMobileno()));
          ps.setLong(4, Integer.parseInt(sb.getMobileno()));
         
@@ -116,6 +116,11 @@ System.out.println("Connection creatted succesfully");
      {
          System.out.println("handle Sql Exception");
          return flag;
+     }
+      catch(ParseException e)
+     {
+         System.out.println("handle parse Exception");
+         
      }
      return flag; 
   }
