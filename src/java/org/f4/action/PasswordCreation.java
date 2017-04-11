@@ -1,9 +1,11 @@
+package org.f4.action;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.f4.action;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,14 +13,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.f4.beans.TeacherBean;
-import org.f4.datasource.DAO;
 
 /**
  *
- * @author jarvis
+ * @author shyamli
  */
-public class TeacherFormAction extends HttpServlet {
+public class PasswordCreation extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,22 +32,25 @@ public class TeacherFormAction extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter pw=response.getWriter();
-        TeacherBean tbean=new TeacherBean();
-        tbean.setName(request.getParameter("name"));
-        tbean.setAddress(request.getParameter("address"));
-        tbean.setEmail(request.getParameter("email"));
-        tbean.setMoblileno(request.getParameter("mobileno"));
-        tbean.setDob(request.getParameter("dob"));
-        if(new DAO().teacherRegister(tbean))
-        {
-           pw.println("<h1>"+tbean.getName()+" registered successfully</h1>");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<form name='passwordform' action='pwdcreator'>");
+            out.println("<lable>Password");
+            out.println("<input type='password' name='password' maxlength='20' required/>");
+            out.println("</lable>");
+            out.println("<p>");
+            out.println("<lable>Confirm Password");
+            out.println("<input type='password' name='password' maxlength='20' required/>");
+            out.println("</lable>");
+            out.println("</p>");
+            out.println("<p>");
+            out.println("<input type='submit' value='Submit'/>");
+            out.println("</p>");
+            out.println("</form>");
+            out.println("</html>");
         }
-        else
-        {
-            pw.println("<h1>teacher not registered successfully</h1>");
-        }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
