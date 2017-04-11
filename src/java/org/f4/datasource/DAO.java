@@ -101,13 +101,15 @@ System.out.println("Connection creatted succesfully");
       try
       { 
           ps=conn.prepareStatement(SqlConstants.TEACHER_REGISTER);
-          ps.setString(2, sb.getName());
+          ps.setString(1, sb.getName());
          ps.setString(6,sb.getSubject());
-         ps.setString(3, sb.getAddress());
-         ps.setString(1, sb.getEmail());
-         ps.setDate(4,this.dateProcess(sb.getDob()));
+         ps.setString(2, sb.getAddress());
+         ps.setString(5, sb.getEmail());
+         ps.setDate(3,this.dateProcess(sb.getDob()));
+         
+
          //ps.setInt(4,Integer.parseInt(sb.getMobileno()));
-         ps.setLong(5, Integer.parseInt(sb.getMobileno()));
+         ps.setLong(4, Integer.parseInt(sb.getMobileno()));
         
          ps.execute();
          flag=true;
@@ -118,7 +120,7 @@ System.out.println("Connection creatted succesfully");
       }
       catch(SQLException e)
      {
-         System.out.println("handle Sql Exception");
+         System.out.println("handle Sql Exception "+e);
          return flag;
      }
      
