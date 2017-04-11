@@ -45,7 +45,7 @@ public class PasswordCreation extends HttpServlet {
             out.println("<input type='password' name='password' maxlength='20' required/>");
             out.println("</lable>");
             out.println("</p>");
-             out.println("<p>");
+            out.println("<p>");
             out.println("<input type='submit' value='Submit'/>");
             out.println("</p>");
             out.println("</form>");
