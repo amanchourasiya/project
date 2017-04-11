@@ -19,7 +19,7 @@
         </servlet-mapping>
         <servlet>
             <servlet-name>newteacher</servlet-name>
-            <servlet-class>org.f4.acton.TeacherFormAction</servlet-class>
+            <servlet-class>org.f4.action.TeacherFormAction</servlet-class>
         </servlet>
         <servlet-mapping>
             <servlet-name>newteacher</servlet-name>

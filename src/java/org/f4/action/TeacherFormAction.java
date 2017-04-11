@@ -6,11 +6,13 @@
 package org.f4.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.f4.beans.TeacherBean;
+import org.f4.datasource.DAO;
 
 /**
  *
@@ -30,12 +32,22 @@ public class TeacherFormAction extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        PrintWriter pw=response.getWriter();
         TeacherBean tbean=new TeacherBean();
         tbean.setName(request.getParameter("name"));
         tbean.setAddress(request.getParameter("address"));
         tbean.setEmail(request.getParameter("email"));
         tbean.setMoblileno(request.getParameter("mobileno"));
+        tbean.setDob(request.getParameter("dob"));
+        if(new DAO().teacherRegister(tbean))
+        {
+           pw.println("<h1>"+tbean.getName()+" registered successfully</h1>");
+        }
+        else
+        {
+            pw.println("<h1>teacher not registered successfully</h1>");
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
