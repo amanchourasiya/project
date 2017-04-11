@@ -121,11 +121,7 @@ System.out.println("Connection creatted succesfully");
          System.out.println("handle Sql Exception");
          return flag;
      }
-      catch(ParseException e)
-     {
-         System.out.println("handle parse Exception");
-          
-     }
+     
      return flag; 
   }
    private java.sql.Date dateProcess(String str) throws ParseException{
