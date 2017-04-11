@@ -10,7 +10,19 @@ package org.f4.beans;
  * @author jarvis
  */
 public class TeacherBean {
-    private String name,address,mobileno,email;
+    private String name,address,mobileno,email,dob;
+
+    public void setMobileno(String mobileno) {
+        this.mobileno = mobileno;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getDob() {
+        return dob;
+    }
     private String subject;
 
     public String getSubject() {

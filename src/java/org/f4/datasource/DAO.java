@@ -105,17 +105,25 @@ System.out.println("Connection creatted succesfully");
          ps.setString(6,sb.getSubject());
          ps.setString(2, sb.getAddress());
          ps.setString(5, sb.getEmail());
+         ps.setDate(3,this.dateProcess(sb.getDob()));
          
-         ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+
+         //ps.setInt(4,Integer.parseInt(sb.getMobileno()));
+         ps.setLong(4, Integer.parseInt(sb.getMobileno()));
         
          ps.execute();
          flag=true;
       }
+      catch(ParseException e){
+      
+          System.out.println("Parse exception "+e);
+      }
       catch(SQLException e)
      {
-         System.out.println("handle Sql Exception");
+         System.out.println("handle Sql Exception "+e);
          return flag;
      }
+     
      return flag; 
   }
    private java.sql.Date dateProcess(String str) throws ParseException{
