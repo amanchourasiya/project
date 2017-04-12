@@ -36,8 +36,9 @@ public class PasswordSubmit extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String pass1=request.getParameter("password");
             String pass2=request.getParameter("confirmpassword");
+            String email=request.getParameter("email");
             if(pass1.equals(pass2)){
-            if(new DAO().setPassword(pass2,pass1))
+            if(new DAO().setPassword(email,pass1)){
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -47,6 +48,16 @@ public class PasswordSubmit extends HttpServlet {
             out.println("<h1>Your password created successfully</h1><a href='/login.html'>Go to login page<a>");
             out.println("</body>");
             out.println("</html>");
+            }
+            else{
+            
+                out.println("<h1>Password creation failed</h1>");
+                
+            }
+            }
+            else{
+            
+                out.println("<h1>Entered passwords do not match</h1>");
             }
         }
     }

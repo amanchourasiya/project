@@ -7,6 +7,7 @@ package org.f4.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,7 +43,9 @@ public class StudentFormAction extends HttpServlet {
         sbean.setRoll(request.getParameter("roll"));
         if(new DAO().studentRegister(sbean))
         {
-           pw.println("<h1>Student registered successfully</h1>");
+           System.out.println("Student registered successfully");
+           RequestDispatcher rd=request.getRequestDispatcher("/pwdcreate");
+           rd.forward(request, response);
         }
         else
         {
