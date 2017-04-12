@@ -42,6 +42,7 @@ public class TeacherFormAction extends HttpServlet {
         if(new DAO().teacherRegister(tbean))
         {
            pw.println("<h1>"+tbean.getName()+" registered successfully</h1>");
+           pw.println("<h3>You have to create a password now please proceed by clicking below<h3></br><a href='/pwdcreate'>create password</a>");
         }
         else
         {

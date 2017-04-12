@@ -135,4 +135,19 @@ System.out.println("Connection creatted succesfully");
       java.sql.Date sd=new java.sql.Date(m);
       return sd;
    }
+   public boolean setPassword(String uname,String password){
+   
+       boolean flag=false;
+       try{
+       
+           ps=conn.prepareStatement(SqlConstants.PASSWORD_SET);
+           ps.setString(1, uname);
+           ps.setString(2, password);
+           flag=true;
+       }catch(SQLException e){
+       
+           System.out.println("Sql error during password creation "+e);
+       }
+       return flag;
+   }
 }
