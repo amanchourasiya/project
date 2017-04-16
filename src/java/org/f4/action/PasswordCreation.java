@@ -35,6 +35,7 @@ public class PasswordCreation extends HttpServlet {
         String email=request.getParameter("email");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<form name='passwordform' action='passwordsubmit'>");
@@ -44,6 +45,7 @@ public class PasswordCreation extends HttpServlet {
             out.println("<p>");
             out.println("<lable>Confirm Password");
             out.println("<input type='password' name='confirmpassword' maxlength='20' required/>");
+            out.println("<input type='hidden> name='email' value='"+email+"'/>");
             out.println("</lable>");
             out.println("<input type='hidden' value='"+email+"' name='email'>");
             out.println("</p>");
