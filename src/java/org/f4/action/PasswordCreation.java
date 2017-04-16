@@ -32,11 +32,12 @@ public class PasswordCreation extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String email=request.getParameter("email");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<form name='passwordform' action='pwdcreator'>");
+            out.println("<form name='passwordform' action='passwordsubmit'>");
             out.println("<lable>Password");
             out.println("<input type='password' name='password' maxlength='20' required/>");
             out.println("</lable>");
@@ -44,6 +45,7 @@ public class PasswordCreation extends HttpServlet {
             out.println("<lable>Confirm Password");
             out.println("<input type='password' name='confirmpassword' maxlength='20' required/>");
             out.println("</lable>");
+            out.println("<input type='hidden' value='"+email+"' name='email'>");
             out.println("</p>");
             out.println("<p>");
             out.println("<input type='submit' value='Submit'/>");

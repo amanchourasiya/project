@@ -34,17 +34,19 @@ public class PasswordSubmit extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String email=request.getParameter("email");
+            System.out.println("Email in PasswordSubmit "+email);
             String pass1=request.getParameter("password");
             String pass2=request.getParameter("confirmpassword");
             if(pass1.equals(pass2)){
-            if(new DAO().setPassword(pass2,pass1))
+            if(new DAO().setPassword(email,pass1))
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title></title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Your password created successfully</h1><a href='/login.html'>Go to login page<a>");
+            out.println("<h1>Your password created successfully</h1><a href='./login.html'>Go to login page<a>");
             out.println("</body>");
             out.println("</html>");
             }

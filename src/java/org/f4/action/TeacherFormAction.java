@@ -7,6 +7,7 @@ package org.f4.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,8 +42,12 @@ public class TeacherFormAction extends HttpServlet {
         tbean.setDob(request.getParameter("dob"));
         if(new DAO().teacherRegister(tbean))
         {
+           
            pw.println("<h1>"+tbean.getName()+" registered successfully</h1>");
            pw.println("<h3>You have to create a password now please proceed by clicking below<h3></br><a href='/pwdcreate'>create password</a>");
+            RequestDispatcher rd=request.getRequestDispatcher("/pwdcreate");
+            System.out.println("Request disppatcher created");
+            rd.forward(request, response);
         }
         else
         {

@@ -96,7 +96,7 @@ System.out.println("Connection creatted succesfully");
      return flag;
   }
   
-   public boolean teacherRegister(TeacherBean sb )//Funstion called when new teacher registers on portal
+   public boolean teacherRegister(TeacherBean sb )//Function called when new teacher registers on portal
   {  boolean flag=false;
       try
       { 
@@ -109,9 +109,11 @@ System.out.println("Connection creatted succesfully");
          
 
          //ps.setInt(4,Integer.parseInt(sb.getMobileno()));
-         ps.setLong(4, Integer.parseInt(sb.getMobileno()));
+         ps.setLong(4, Long.parseLong(sb.getMobileno()));
+        System.out.println("Method teacher regisster executed");
         
          ps.execute();
+         System.out.println("Method teacher regisster execute()");
          flag=true;
       }
       catch(ParseException e){
@@ -143,6 +145,7 @@ System.out.println("Connection creatted succesfully");
            ps=conn.prepareStatement(SqlConstants.PASSWORD_SET);
            ps.setString(1, uname);
            ps.setString(2, password);
+           ps.execute();
            flag=true;
        }catch(SQLException e){
        
