@@ -38,6 +38,82 @@ public class PasswordCreation extends HttpServlet {
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
+            out.println("<head>\n" +
+"\n" +
+"    <meta charset=\"utf-8\">\n" +
+"    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
+"    <meta name=\"description\" content=\"\">\n" +
+"    <meta name=\"author\" content=\"\">\n" +
+"\n" +
+"    <title>Shiksha Portal - A step towards free education.</title>\n" +
+"\n" +
+"    <!-- Bootstrap Core CSS -->\n" +
+"    <link href=\"css/bootstrap.css\" rel=\"stylesheet\">\n" +
+"\n" +
+"    <!-- Custom CSS -->\n" +
+"	<link rel=\"stylesheet\" href=\"css/main.css\">\n" +
+"    <link href=\"css/custom.css\" rel=\"stylesheet\">\n" +
+"	\n" +
+"	<script src=\"//use.edgefonts.net/bebas-neue.js\"></script>\n" +
+"\n" +
+"    <!-- Custom Fonts & Icons -->\n" +
+"    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>\n" +
+"	<link rel=\"stylesheet\" href=\"css/icomoon-social.css\">\n" +
+"	<link rel=\"stylesheet\" href=\"css/font-awesome.min.css\">\n" +
+"	\n" +
+"	<script src=\"js/modernizr-2.6.2-respond-1.1.0.min.js\"></script>\n" +
+"	\n" +
+"\n" +
+"</head>");
+           
+            out.println("<header class=\"navbar navbar-inverse navbar-fixed-top\" role=\"banner\">\n" +
+"        <div class=\"container\">\n" +
+"            <div class=\"navbar-header\">\n" +
+"                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n" +
+"                    <span class=\"sr-only\">Toggle navigation</span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                </button>\n" +
+"                <a class=\"navbar-brand\" href=\"index.html\"><img src=\"img/logo.png\" alt=\"Basica\"></a>\n" +
+"            </div>\n" +
+"            <div class=\"collapse navbar-collapse\">\n" +
+"                <ul class=\"nav navbar-nav navbar-right\">\n" +
+"                    <li><a href=\"index.html\">Home</a></li>\n" +
+"                    <li><a href=\"about-us.html\">About Us</a></li>\n" +
+"                    <li><a href=\"services.html\">Services</a></li>\n" +
+"                    <li><a href='portfolio.html'>Portfolio</a></li>\n" +
+"                    <li class=\"active\"><a href=\"login.html\">Login</a></li>\n" +
+"                    <li class=\"dropdown\">\n" +
+"                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Pages <i class=\"icon-angle-down\"></i></a>\n" +
+"                        <ul class=\"dropdown-menu\">\n" +
+"                            <li><a href=\"#\">Dropdown Menu 1</a></li>\n" +
+"                            <li><a href=\"#\">Dropdown Menu 2</a></li>\n" +
+"                            <li><a href=\"#\">Dropdown Menu 3</a></li>\n" +
+"                            <li><a href=\"#\">Dropdown Menu 4</a></li>\n" +
+"                            <li><a href=\"#\">Dropdown Menu 5</a></li>\n" +
+"                            <li class=\"divider\"></li>\n" +
+"                            <li><a href=\"#\">Privacy Policy</a></li>\n" +
+"                            <li><a href=\"#\">Terms of Use</a></li>\n" +
+"                        </ul>\n" +
+"                    </li>\n" +
+"                    <li><a href=\"blog.html\">Blog</a></li> \n" +
+"                    <li><a href=\"contact-us.html\">Contact</a></li>\n" +
+"                </ul>\n" +
+"            </div>\n" +
+"        </div>\n" +
+"    </header><!--/header-->\n" +
+"");
+            out.println("<div class=\"section section-breadcrumbs\">\n" +
+"			<div class=\"container\">\n" +
+"				<div class=\"row\">\n" +
+"					<div class=\"col-md-12\">\n" +
+"						<h1>Password Creation</h1>\n" +
+"					</div>\n" +
+"				</div>\n" +
+"			</div>\n" +
+"		</div>");
             out.println("<form name='passwordform' action='passwordsubmit'>");
             out.println("<lable>Password");
             out.println("<input type='password' name='password' maxlength='20' required/>");
@@ -45,7 +121,7 @@ public class PasswordCreation extends HttpServlet {
             out.println("<p>");
             out.println("<lable>Confirm Password");
             out.println("<input type='password' name='confirmpassword' maxlength='20' required/>");
-            out.println("<input type='hidden> name='email' value='"+email+"'/>");
+           
             out.println("</lable>");
             out.println("<input type='hidden' value='"+email+"' name='email'>");
             out.println("</p>");

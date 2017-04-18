@@ -78,7 +78,7 @@ System.out.println("Connection creatted succesfully");
          ps.setString(6, sb.getEmail());
         
          
-         ps.setInt(5,Integer.parseInt(sb.getMobileno()));
+         ps.setLong(5,Long.parseLong(sb.getMobileno()));
          System.out.println("Bean value "+sb.getDob());
          ps.setDate(3, this.dateProcess(sb.getDob()));
          ps.execute();
