@@ -9,6 +9,15 @@
 <html>
     <%@include file="header.jsp" %>
     
+    <div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Our available  courses</h1>
+					</div>
+				</div>
+			</div>
+		</div>
     <div class="section">
 	    	<div class="container">
 				<div class="row">
@@ -20,7 +29,7 @@
 						<figcaption>
 							<h3>Collections</h3>
 							<span>Industrial approach</span>
-							<a href="portfolio-item.html">Take a look</a>
+							<a href="collectiondetails.jsp">Take a look</a>
 						</figcaption>
 					</figure>
 	        	</div>	
@@ -30,7 +39,7 @@
 						<figcaption>
 							<h3>Generics</h3>
 							<span>Reusability of code</span>
-							<a href="portfolio-item.html">Take a look</a>
+							<a href="genericdetails.jsp">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -40,7 +49,7 @@
 						<figcaption>
 							<h3>Exception Handling</h3>
 							<span>A world of imperfection</span>
-							<a href="portfolio-item.html">Take a look</a>
+							<a href="exceptiondetails.jsp">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -86,6 +95,6 @@
 				
 			</div>
 		</div>
-    
+    <hr>
     <%@include file="footer.jsp"%>
 </html>
