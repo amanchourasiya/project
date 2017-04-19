@@ -58,7 +58,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
@@ -73,7 +73,7 @@
                             <li><a href="#">Terms of Use</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog.html">Blog</a></li> 
+                    
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>

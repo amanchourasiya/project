@@ -1,3 +1,11 @@
+<%-- 
+    Document   : login
+    Created on : Apr 18, 2017, 8:06:25 PM
+    Author     : Autobot
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -56,7 +64,7 @@ and open the template in the editor.
                 <ul class="nav navbar-nav navbar-right">
                     <li ><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
+                   
                     <li class='active'><a href="login.html">Login</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
@@ -71,7 +79,7 @@ and open the template in the editor.
                             <li><a href="#">Terms of Use</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog.html">Blog</a></li> 
+                    
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
