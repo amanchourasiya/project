@@ -11,13 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.f4.datasource.DAO;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author shyamli
+ * @author Autobot
  */
-public class PasswordSubmit extends HttpServlet {
+public class LogoutAction extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,33 +31,13 @@ public class PasswordSubmit extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String email=request.getParameter("email");
-            System.out.println("Email in PasswordSubmit "+email);
-            String pass1=request.getParameter("password");
-            String pass2=request.getParameter("confirmpassword");
             
-            if(pass1.equals(pass2)){
-
-            if(new DAO().setPassword(email,pass1)){
-             
-                request.getRequestDispatcher("header.jsp").include(request, response);
-                out.println("<h1>Your password created successfully</h1><a href='./login.jsp'>Go to login page<a>");
-                out.println("<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />");
-                 request.getRequestDispatcher("footer.jsp").include(request, response);
-            }
-            else{
-            
-                out.println("<h1>Password creation failed</h1>");
-                request.getRequestDispatcher("error.jsp").forward(request, response);
-                
-            }
-            }            else{
-            
-                out.println("<h1>Entered passwords do not match</h1>");
-            }
+          HttpSession session=request.getSession(false);
+          if(session!=null)
+              session.invalidate();
+          request.getRequestDispatcher("index.html").forward(request, response);
         }
     }
 

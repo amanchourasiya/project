@@ -7,11 +7,11 @@ package org.f4.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.f4.datasource.*;
 /**
  *
@@ -38,12 +38,15 @@ public class LoginFormAction extends HttpServlet {
         PrintWriter pw=response.getWriter(); 
         
         if(new DAO().loginCheck(user, pwd)){
-           
-            pw.println("<h1>login successfull "+user+"</h1>");
+           HttpSession session=request.getSession();
+           session.setAttribute("user", user);
+            request.getRequestDispatcher("loginhome.jsp").forward(request, response);
            
         }
         else{
         
+            HttpSession session=request.getSession();
+            
             pw.println("<h1>Login unsuccessful </h1>");
         }
     }
