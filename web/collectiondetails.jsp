@@ -51,6 +51,7 @@
 						<p><strong>Duration : </strong> 6 weeks - 4 lectures per week.(Self paced)</p>
 						<p><strong>Date: </strong>As soon as you subscribe</p>
 						<p><strong>Tags: </strong>Java, Collections, IT industry</p>
+                                                <input type="button" name="enroll" value="enroll" onclick="" >
 	    			</div>
 	    			<!-- End Product Summary & Options -->
 	    			

@@ -13,7 +13,15 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html lang="en">
-
+  <%  
+       if(request.getSession().getAttribute("user")!=null){
+          
+    
+        request.getRequestDispatcher("loginhome.jsp").forward(request, response); 
+       System.out.println("session "+session);
+       }
+    %>
+   
 <head>
 
     <meta charset="utf-8">
@@ -99,9 +107,9 @@ and open the template in the editor.
         <br/><br/><br/><br/><br/><br/>
             <form name="login" action="login" method="post"  >
                
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="userid" /><br/><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="userid" required /><br/><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password
-                           &nbsp;&nbsp;&nbsp; <input type="password" name="password" maxlength="20" /><br />
+                           &nbsp;&nbsp;&nbsp; <input type="password" name="password" maxlength="20" required /><br />
                    <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <input type="submit" value="Login"/><br />
                    <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
