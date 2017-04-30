@@ -11,7 +11,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+    <jsp:include page="header.jsp" />
+    <br /> <br /> <br /> <br /> <br /> <br />
+    <h1><%=request.getAttribute("message")%></h1>
+    <%if(request.getAttribute("message").equals("Login unsuccessfull")){%>
+   <h2> <a href='login.jsp'>Go to login page</a></h2>
+    <%}%>
 </html>

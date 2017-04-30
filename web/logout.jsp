@@ -7,4 +7,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%session.invalidate();%>
+<%config.setAttribute("message","logout");%>
 <%@include file="login.jsp" %>

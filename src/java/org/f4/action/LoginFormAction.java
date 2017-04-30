@@ -45,7 +45,8 @@ public class LoginFormAction extends HttpServlet {
         }
         else{
         
-            HttpSession session=request.getSession();
+            request.setAttribute("message", "Login unsuccessfull");
+            request.getRequestDispatcher("error.jsp").forward(request, response);
             
             pw.println("<h1>Login unsuccessful </h1>");
         }

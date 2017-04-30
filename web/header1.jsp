@@ -75,7 +75,7 @@
                     </li>
                     
                     <li><a href="contact-us.html">Contact</a></li>
-                    <li><a href="logout.jsp">Log out</a></li>
+                    <li><a href="logout.jsp" onClick="return confirm('Are you sure to logout?');">Log out</a></li>
                 </ul>
             </div>
         </div>

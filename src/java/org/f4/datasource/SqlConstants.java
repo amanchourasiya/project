@@ -13,7 +13,7 @@ public class SqlConstants {
     public static final String LOGIN_CHECK="select count(*) from LOGIN where USERID=? and PASSWORD=?";
     public static final String STUDENT_REGISTER="insert into NEWSTUDENTREG values (?,?,?,?,?,?)";
     public static final String TEACHER_REGISTER="insert into NEWTEACHERREG values (?,?,?,?,?,?)";
-    public static final String PASSWORD_SET="insert into LOGIN values(?,?)";
+    public static final String PASSWORD_SET="insert into LOGIN values(?,?,?)";
     
     
 }

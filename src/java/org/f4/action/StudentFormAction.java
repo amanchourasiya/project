@@ -44,6 +44,7 @@ public class StudentFormAction extends HttpServlet {
         if(new DAO().studentRegister(sbean))
         {
            System.out.println("Student registered successfully");
+           request.setAttribute("role", "student");
            RequestDispatcher rd=request.getRequestDispatcher("/pwdcreate");
            rd.forward(request, response);
         }

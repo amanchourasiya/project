@@ -38,12 +38,14 @@ public class PasswordSubmit extends HttpServlet {
             System.out.println("Email in PasswordSubmit "+email);
             String pass1=request.getParameter("password");
             String pass2=request.getParameter("confirmpassword");
-            
+            String role=request.getParameter("role");
+            System.out.println("Role is "+role);
             if(pass1.equals(pass2)){
 
-            if(new DAO().setPassword(email,pass1)){
+            if(new DAO().setPassword(email,pass1,role)){
              
                 request.getRequestDispatcher("header.jsp").include(request, response);
+                out.println("<br /><br /><br /><br /><br />");
                 out.println("<h1>Your password created successfully</h1><a href='./login.jsp'>Go to login page<a>");
                 out.println("<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />");
                  request.getRequestDispatcher("footer.jsp").include(request, response);
@@ -51,12 +53,15 @@ public class PasswordSubmit extends HttpServlet {
             else{
             
                 out.println("<h1>Password creation failed</h1>");
+                request.setAttribute("message", "Password creation failed");
                 request.getRequestDispatcher("error.jsp").forward(request, response);
                 
             }
             }            else{
             
                 out.println("<h1>Entered passwords do not match</h1>");
+                request.setAttribute("message", "Password creation failed because entered passwords do not match" );
+                request.getRequestDispatcher("pwdcreate").forward(request, response);
             }
         }
     }

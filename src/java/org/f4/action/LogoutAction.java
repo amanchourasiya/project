@@ -37,6 +37,7 @@ public class LogoutAction extends HttpServlet {
           HttpSession session=request.getSession(false);
           if(session!=null)
               session.invalidate();
+          request.setAttribute("message", "logout");
           request.getRequestDispatcher("index.html").forward(request, response);
         }
     }

@@ -137,7 +137,7 @@ System.out.println("Connection creatted succesfully");
       java.sql.Date sd=new java.sql.Date(m);
       return sd;
    }
-   public boolean setPassword(String uname,String password){
+   public boolean setPassword(String uname,String password,String role){
    
        boolean flag=false;
        try{
@@ -145,6 +145,7 @@ System.out.println("Connection creatted succesfully");
            ps=conn.prepareStatement(SqlConstants.PASSWORD_SET);
            ps.setString(1, uname);
            ps.setString(2, password);
+           ps.setString(3,role);
            ps.execute();
            flag=true;
        }catch(SQLException e){
