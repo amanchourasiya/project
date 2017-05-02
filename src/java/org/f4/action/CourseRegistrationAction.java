@@ -15,9 +15,9 @@ import org.f4.datasource.DAO;
 
 /**
  *
- * @author shyamli
+ * @author Autobot
  */
-public class PasswordSubmit extends HttpServlet {
+public class CourseRegistrationAction extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,37 +31,13 @@ public class PasswordSubmit extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String email=request.getParameter("email");
-            System.out.println("Email in PasswordSubmit "+email);
-            String pass1=request.getParameter("password");
-            String pass2=request.getParameter("confirmpassword");
-            String role=request.getParameter("role");
-            System.out.println("Role is "+role);
-            if(pass1.equals(pass2)){
-
-            if(new DAO().setPassword(email,pass1,role)){
-             
-                request.getRequestDispatcher("header.jsp").include(request, response);
-                out.println("<br /><br /><br /><br /><br />");
-                out.println("<h1>Your password created successfully</h1><a href='./login.jsp'><h2>Go to login page<a></h2>");
-                out.println("<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />");
-                 request.getRequestDispatcher("footer.jsp").include(request, response);
-            }
-            else{
-            
-                out.println("<h1>Password creation failed</h1>");
-                request.setAttribute("message", "Password creation failed");
-                request.getRequestDispatcher("error.jsp").forward(request, response);
-                
-            }
-            }            else{
-            
-                out.println("<h1>Entered passwords do not match</h1>");
-                request.setAttribute("message", "Password creation failed because entered passwords do not match" );
-                request.getRequestDispatcher("pwdcreate").forward(request, response);
+            String uid=(String)request.getSession().getAttribute("user");
+            String course=request.getParameter("course");
+            if(new DAO().courseEnroll(uid, course)){
+            request.setAttribute("message","Course enrolled successfully");
+            request.getRequestDispatcher("loginhome.jsp").forward(request, response);
             }
         }
     }

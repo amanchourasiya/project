@@ -34,6 +34,10 @@ public class StudentCourse extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
            request.getRequestDispatcher("header.jsp").include(request, response);
            out.print("<br/><br/><br/><br/><br/><br/><br/>");
+           if(request.getAttribute("message")!=null){
+           
+               out.println("<h3>"+request.getAttribute("message")+"</h3>");
+           }
            out.print(" <div style=\"float: right\">");
            if(request.getParameter("video")==null){
            out.println(" <video src=\"video/collections/video5.mp4\" controls=\"true\"  alt=\"Video not available\" height=\"600\" width=\"900\"></video>");

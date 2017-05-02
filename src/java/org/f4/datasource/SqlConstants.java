@@ -14,6 +14,7 @@ public class SqlConstants {
     public static final String STUDENT_REGISTER="insert into NEWSTUDENTREG values (?,?,?,?,?,?)";
     public static final String TEACHER_REGISTER="insert into NEWTEACHERREG values (?,?,?,?,?,?)";
     public static final String PASSWORD_SET="insert into LOGIN values(?,?,?)";
-    
-    
+    public static final String SET_STUDENT_COURSE="insert into STUDENTCOURSE VALUES(?,?)";
+    public static final String GET_STUDENT_COURSE="SELECT COURSE FROM STUDENTCOURSE WHERE SID=?";
+    public static final String CHECK_COURSE_ENROLL="SELECT COUNT(*) FROM STUDENTCOURSE"; 
 }

@@ -128,7 +128,7 @@ System.out.println("Connection creatted succesfully");
      
      return flag; 
   }
-   private java.sql.Date dateProcess(String str) throws ParseException{
+   private java.sql.Date dateProcess(String str) throws ParseException{ //Function converts String to java.sql.Date and this to java.sql.Date.
    
       SimpleDateFormat sdf=new SimpleDateFormat("dd-mm-yyyy");
       System.out.println("Date string "+str);
@@ -153,5 +153,40 @@ System.out.println("Connection creatted succesfully");
            System.out.println("Sql error during password creation "+e);
        }
        return flag;
+   }
+   
+   public boolean courseEnroll(String uid,String course){//This method enrolls student to a particular course.
+   
+       boolean flag=false;
+       try{
+       
+          ps=conn.prepareStatement(SqlConstants.SET_STUDENT_COURSE);
+          ps.setString(1,uid);
+          ps.setString(2, course);
+          ps.execute();
+          flag=true;
+       }
+       catch(SQLException e){
+       
+           System.out.println("Some sql exception occurred in courseEnroll()");
+       }
+       return flag;
+   }
+   
+   public int checkCourseEnroll(String uid){ //This method checks if user has enrolled for any course.
+   
+       int returnvalue=0;
+       try{
+       
+           ps=conn.prepareStatement(SqlConstants.CHECK_COURSE_ENROLL);
+           ps.setString(1,uid);
+           returnvalue=1;
+       }
+       catch(SQLException e){
+       
+           System.out.println("Exception in checkCourseEnroll()");
+       }
+       return returnvalue;
+       
    }
 }

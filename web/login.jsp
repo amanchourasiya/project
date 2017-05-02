@@ -21,6 +21,7 @@ and open the template in the editor.
        System.out.println("session "+session);
        }
     %>
+    
    
 <head>
 
@@ -104,7 +105,15 @@ and open the template in the editor.
 				</div>
 			</div>
 		</div>
-        <br/><br/><br/><br/><br/><br/>
+        <br/>
+        <%
+    if(request.getAttribute("message")!=null){
+    
+    
+    %>
+    <h1><%=request.getAttribute("message")%></h1>
+    <%}%>
+    <br/>
             <form name="login" action="login" method="post"  >
                
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="userid" required /><br/><br />

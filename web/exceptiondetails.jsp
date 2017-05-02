@@ -38,7 +38,7 @@
 	    			<!-- End Product Image & Available Colors -->
 	    			<!-- Product Summary & Options -->
 	    			<div class="col-sm-6 product-details">
-	    				<h2>Collection Framework</h2>
+	    				<h2>Exception Handling</h2>
 						<h3>Quick Overview</h3>
 	    				<p>
                                           Exception handling has always been a necessary skill to have as a java programmer because of the need of developing a robust and secure code. It is the basic necessity of every java program to prevent it from crashing abnormally.

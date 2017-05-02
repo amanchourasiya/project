@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <html>
     <%@include file="header1.jsp" %>
-    
     <div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
@@ -18,8 +17,15 @@
 				</div>
 			</div>
 		</div>
+    
+    
+    <%if(request.getAttribute("message")!=null){%>
+   <h3> <%=request.getAttribute("message")%></h3>
+    <%}%>
+    
     <div class="section">
 	    	<div class="container">
+                    
 				<div class="row">
 			
 			<ul class="grid cs-style-2">

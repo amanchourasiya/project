@@ -51,7 +51,12 @@
 						<p><strong>Duration : </strong> 6 weeks - 4 lectures per week.(Self paced)</p>
 						<p><strong>Date: </strong>As soon as you subscribe</p>
 						<p><strong>Tags: </strong>Java, Collections, IT industry</p>
-                                                <input type="button" name="enroll" value="enroll" onclick="" >
+                                               <form name="courseenroll" action="courseregistration">
+                                                   <input type="hidden" name="course" value="collections">
+                                                <input type="submit" name="enroll" value="Enroll to this course" 
+                                                       onclick="return confirm('Do you really want to enroll into this course.');"
+                                                       >
+                                                </form>       
 	    			</div>
 	    			<!-- End Product Summary & Options -->
 	    			
