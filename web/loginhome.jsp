@@ -61,31 +61,31 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<figure>
-						<img src="img/portfolio/5.jpg" alt="img05">
+						<img src="img/courses/oops.png" alt="img05">
 						<figcaption>
-							<h3>Safari</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
+							<h3>OOPS in JAVA</h3>
+							<span>Basic building block</span>
+							<a href="oopsdetails.jsp">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<figure>
-						<img src="img/portfolio/3.jpg" alt="img03">
+						<img src="img/courses/multithreading.png" alt="img03">
 						<figcaption>
-							<h3>Phone</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
+							<h3>Multithreading in Java</h3>
+							<span>Parallel computing</span>
+							<a href="multithreadingdetails.jsp">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<figure>
-						<img src="img/portfolio/6.jpg" alt="img06">
+						<img src="img/courses/jvm.png" alt="img06">
 						<figcaption>
-							<h3>Game Center</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
+							<h3>JVM Architecture</h3>
+							<span>Knowing internals of Java</span>
+							<a href="jvmdetails.jsp">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
