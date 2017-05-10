@@ -209,4 +209,23 @@ System.out.println("Connection creatted succesfully");
        return role;
        
    }
+   
+   public boolean forgotPassword(String user,String newPwd){
+   
+       boolean flag=false;
+       try{
+       
+           ps=conn.prepareStatement(SqlConstants.FORGOT_PASSWORD);
+           ps.setString(1,newPwd);
+           ps.setString(2, user);
+           ps.executeQuery();
+           flag=true;
+       }
+       catch(SQLException e){
+   
+       System.out.println("Exception in forgotPassword()");
+    
+   }
+       return flag;
+   }
 }

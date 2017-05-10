@@ -18,4 +18,5 @@ public class SqlConstants {
     public static final String GET_STUDENT_COURSE="SELECT COURSE FROM STUDENTCOURSE WHERE SID=?";
     public static final String CHECK_COURSE_ENROLL="SELECT COUNT(*) FROM STUDENTCOURSE"; 
     public static final String CHECK_ROLE="SELECT ROLE FROM LOGIN WHERE USERID=? AND PASSWORD=?";
+    public static final String FORGOT_PASSWORD="UPDATE LOGIN SET PASSWORD=? WHERE USERID=?";
 }

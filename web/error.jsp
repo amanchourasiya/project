@@ -13,8 +13,9 @@
     </head>
     <jsp:include page="header.jsp" />
     <br /> <br /> <br /> <br /> <br /> <br />
-    <h1><%=request.getAttribute("message")%></h1>
-    <%if(request.getAttribute("message").equals("Login unsuccessfull")){%>
-   <h2> <a href='login.jsp'>Go to login page</a></h2>
+    <%if(session.getAttribute("message")!=null){%>
+    <%=session.getAttribute("message")%>
     <%}%>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <jsp:include page="footer.jsp" />
 </html>
