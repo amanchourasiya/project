@@ -189,4 +189,24 @@ System.out.println("Connection creatted succesfully");
        return returnvalue;
        
    }
+   public String checkRole(String user,String pwd){
+   
+       String role="";
+       try{
+       
+           ps=conn.prepareStatement(SqlConstants.CHECK_ROLE);
+           ps.setString(1, user);
+           ps.setString(2, pwd);
+           ResultSet rs=ps.executeQuery();
+           while(rs.next()){
+           
+               role=rs.getString(1);
+           }
+       }catch(SQLException e){
+       
+           System.out.println("SQL error in checkrole()");
+       }
+       return role;
+       
+   }
 }

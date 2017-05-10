@@ -10,9 +10,14 @@
     <%@include file="header1.jsp" %>
     <div class="section section-breadcrumbs">
 			<div class="container">
+                             
 				<div class="row">
 					<div class="col-md-12">
 						<h1>Our available  courses</h1>
+					</div>
+                                    <div  style="float: right;color: blue;">
+						<h3><form action="studentcourse"><input type="submit" name="courses" value="Go to your courses"></form></h3>
+                                               
 					</div>
 				</div>
 			</div>
@@ -23,6 +28,10 @@
    <h3> <%=request.getAttribute("message")%></h3>
     <%}%>
     
+    <%if(request.getAttribute("role")!=null){
+        System.out.println(request.getAttribute("role"));
+    
+   }%>
     <div class="section">
 	    	<div class="container">
                     

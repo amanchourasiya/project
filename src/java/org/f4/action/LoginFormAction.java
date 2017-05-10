@@ -40,6 +40,7 @@ public class LoginFormAction extends HttpServlet {
         if(new DAO().loginCheck(user, pwd)){
            HttpSession session=request.getSession();
            session.setAttribute("user", user);
+           session.setAttribute("role", new DAO().checkRole(user, pwd));
             request.getRequestDispatcher("loginhome.jsp").forward(request, response);
            
         }

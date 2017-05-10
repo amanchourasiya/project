@@ -38,9 +38,9 @@ public class StudentCourse extends HttpServlet {
            
                out.println("<h3>"+request.getAttribute("message")+"</h3>");
            }
-           out.print(" <div style=\"float: right\">");
+           out.print(" <div style=\"float: right\";padding:50px;>");
            if(request.getParameter("video")==null){
-           out.println(" <video src=\"video/collections/video5.mp4\" controls=\"true\"  alt=\"Video not available\" height=\"600\" width=\"900\"></video>");
+           out.println(" <video src=\"video/collections/video1.mp4\" style=\"padding:50px\" controls=\"true\"  alt=\"Video not available\" height=\"600\" width=\"900\"></video>");
                
            }
            else{
